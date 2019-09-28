@@ -46,12 +46,18 @@ class WordCounter extends Component {
     render() {
         return (
             <div>
-                <textarea onChange={(event) => this.handleKeypress(event)}>{this.state.value}</textarea><br/>
-                <textarea onChange={(e) => this.secondWordHandler(e)}>{this.state.sWord}</textarea>
-                <div>Count Words: {this.state.List.length}</div>
-                <div>Count: {this.state.occurence}</div>
-                <div>Input: {this.state.value}</div>
+                <center><header>Renzy Word Count</header></center>
+                <br></br>
+                <center>
+                <form>
+                <textarea onChange={(event) => this.handleKeypress(event)} placeholder="Enter sentence">{this.state.value}</textarea><br/>
+                <textarea onChange={(e) => this.secondWordHandler(e)} placeholder="Enter specific word">{this.state.sWord}</textarea>
+                <div className="a">Count Words: {this.state.List.length}</div>
+                <div className="a">Count: {this.state.occurence}</div>
+                <div className="a">Input: {this.state.value}</div>
                 <button onClick={(e) => this.countWordHandler(e)}>Click</button>
+                </form>
+                </center>
             </div>
         );
     }
